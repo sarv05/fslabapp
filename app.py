@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # Define HTML and CSS within the Python code
     html_content = '''
     <!DOCTYPE html>
     <html lang="en">
@@ -34,7 +33,6 @@ def home():
     </body>
     </html>
     '''
-    # Render the HTML content as the response
     return render_template_string(html_content)
 
 if __name__ == '__main__':
