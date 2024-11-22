@@ -1,13 +1,41 @@
-from flask import Flask, render_template
+from flask import Flask, render_template_string
 
-# Create an instance of the Flask class
 app = Flask(__name__)
 
-# Define a route for the root URL
 @app.route('/')
 def home():
-    return render_template('index.html')
+    # Define HTML and CSS within the Python code
+    html_content = '''
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flask App with CSS</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                text-align: center;
+                padding: 50px;
+            }
+            h1 {
+                color: #333;
+            }
+            p {
+                color: #666;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to My Flask App</h1>
+        <p>This is a simple example of embedding CSS within the HTML.</p>
+    </body>
+    </html>
+    '''
+    # Render the HTML content as the response
+    return render_template_string(html_content)
 
-# Start the app
 if __name__ == '__main__':
     app.run(debug=True)
