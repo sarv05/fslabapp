@@ -20,6 +20,7 @@ def home():
             }
             h1 {
                 color: #333;
+                background-color: blue;
             }
             p {
                 color: #666;
